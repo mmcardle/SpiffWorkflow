@@ -17,12 +17,16 @@ from __future__ import division
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 import logging
 import json
+import sys
 
 from SpiffWorkflow.Task import Task
 from SpiffWorkflow.exceptions import WorkflowException
 from SpiffWorkflow.specs.TaskSpec import TaskSpec
 from SpiffWorkflow.operators import valueof, Attrib, PathAttrib
 from SpiffWorkflow.util import merge_dictionary
+
+if sys.version_info > (3,):
+     long = int
 
 try:
     from celery.app import default_app
