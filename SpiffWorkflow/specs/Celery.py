@@ -62,7 +62,7 @@ def Serializable(o):
     Use this to return errors and other info that does not need to be
     deserialized or does not contain important app data. Best for returning
     error info and such"""
-    if type(o) in [basestring, dict, int, long]:
+    if type(o) in [str, dict, int, long]:
         return o
     else:
         try:
